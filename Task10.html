@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS TASK4</title>
+  <style>
+    .container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      margin-top: 30px;
+      padding: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-width: auto;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .showdate,
+    .showtime {
+      width: 50%;
+      text-align: center;
+      font-size: large;
+      padding: 10px;
+      border: 1px solid #cccccca4;
+      border-radius: 5px;
+    }
+
+    .footer-container {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <main class="main-container">
+      <p>
+        <button type="button" onclick="updateDate()">Show Date</button>
+      </p>
+
+      <div id="showdate" class="showdate hidden" style="display:none">
+        <span id="date"></span>
+      </div>
+
+      <p>
+        <button type="button" onclick="updateTime()">Show Time</button>
+      </p>
+
+      <div id="showtime" class="showtime hidden" style="display:none">
+        <span>Time</span>
+        <span id="time"></span>
+        <span>(GMT+05:30) Indian Standard Time (IST)</span>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function updateDate() {
+      var date = new Date();
+      var formattedDate = date.toLocaleDateString();
+      document.getElementById("date").innerHTML = formattedDate;
+      document.getElementById("showdate").style.display = "block";
+      document.getElementById("showdate").classList.remove("hidden");
+    }
+
+    function updateTime() {
+      var time = new Date();
+      var formattedTime = time.toLocaleTimeString();
+      document.getElementById("time").innerHTML = formattedTime;
+      document.getElementById("showtime").style.display = "block";
+      document.getElementById("showtime").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>

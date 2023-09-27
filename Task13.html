@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS TASK7</title>
+    <style>
+        #container {
+            text-align: center;
+            margin-top: 280px;
+            font-weight: bold;
+            color: blue;
+        }
+
+        #i1 {
+            position: absolute;
+            left: 100px;
+            top: 80px;
+            
+        }
+        @keyframes trains {
+            from {
+                left: 0px;
+            }
+            to {
+                left: 100%  
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="i1" src="https://img.freepik.com/premium-vector/steam-locomotive-cartoon-clipart-illustration_576561-1290.jpg"  height="200px" width="200px"/>
+    </div>
+  
+    <div id="container">
+        <form>
+            <center>
+                <br/>
+                <p><h1>Click the below button to handle animation</h1></p>
+                <input type="button" id="s"  value="Start">
+                <input type="button" id="r" value="Reset">
+            </center>
+        </form>
+    </div>
+
+    <center>
+        <div id="msg"></div>
+    </center>
+
+    <script>
+        s.addEventListener("click", function(){
+            i1.style.animation = "trains 12s linear infinite"
+        });
+        r.addEventListener("click", function(){
+            i1.style.animation = ""
+        });
+    </script>
+</body>
+</html>

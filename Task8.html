@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS TASK2</title>
+
+<style>
+  body {
+      text-align: center;
+      font-size: 20px;
+  }
+</style>
+</head>
+
+<body>
+  <form>
+    <label for="inputString"><br/>Enter a string to sort alphabetically: </label><br><br>
+    <input type="text" id="inputString" name="inputString">
+    <button type="button" onclick="sortAndDisplay()">Sort</button>
+  </form>
+  <br/>
+  <div id="result"></div>
+
+  <script>
+    function sortStringAlphabetically(inputString) {
+      var characters = inputString.split('');
+      characters.sort();
+      var sortedString = characters.join('');
+      return sortedString;
+    }
+
+    function sortAndDisplay() {
+      var userInput = document.getElementById("inputString").value;
+      var resultDiv = document.getElementById("result");
+      var sortedOutput = sortStringAlphabetically(userInput);
+      resultDiv.innerHTML = "Original Input: " + userInput + "<br>Sorted Output: " + sortedOutput;
+    }
+  </script>
+</body>
+</html>
